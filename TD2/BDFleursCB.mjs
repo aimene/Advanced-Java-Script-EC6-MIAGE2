@@ -74,9 +74,6 @@ function creerBaseFleurs(nomFichier, cb) {
             cb(null, new BaseDonneesFleurs(nomFichier));
         }
     })
-
-
-
 }
 
 function creerBaseFleursV2(nomFichier) {
@@ -87,5 +84,11 @@ function creerBaseFleursV2(nomFichier) {
         .then(() => new BaseDonneesFleurs(nomFichier));
 }
 
+async function creerBaseFleursV3(nomFichier) {
+    if (path.extname(nomFichier) !== '.json')
+        nomFichier += '.json';
+    await fsPromises.access(nomFichier, fs.constants.R_OK);
+    return new BaseDonneesFleurs(nomFichier);
+}
 
-export { BaseDonneesFleurs, creerBaseFleurs, creerBaseFleursV2 };
+export { BaseDonneesFleurs, creerBaseFleurs, creerBaseFleursV2, creerBaseFleursV3 };
