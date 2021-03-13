@@ -62,7 +62,24 @@ class BaseDonneesFleurs {
     }
 }
 
-function creerBaseFleurs(nomFichier) {
+
+function creerBaseFleurs(nomFichier, cb) {
+    if (path.extname(nomFichier) !== '.json')
+        nomFichier += '.json';
+
+    fs.access(nomFichier, fs.constants.R_OK, (err, data) => {
+        if (err) {
+            cb(err);
+        } else {
+            cb(null, new BaseDonneesFleurs(nomFichier));
+        }
+    })
+
+
+
+}
+
+function creerBaseFleursV2(nomFichier) {
     if (path.extname(nomFichier) !== '.json')
         nomFichier += '.json';
 
@@ -71,4 +88,4 @@ function creerBaseFleurs(nomFichier) {
 }
 
 
-export { BaseDonneesFleurs, creerBaseFleurs };
+export { BaseDonneesFleurs, creerBaseFleurs, creerBaseFleursV2 };

@@ -1,4 +1,4 @@
-import { BaseDonneesFleurs, creerBaseFleurs } from './BDFleursCB.mjs';
+import { BaseDonneesFleurs, creerBaseFleurs, creerBaseFleursV2 } from './BDFleursCB.mjs';
 
 
 let BDF = new BaseDonneesFleurs('flowers.json');
@@ -14,6 +14,25 @@ let BDF = new BaseDonneesFleurs('flowers.json');
 //     console.log('data : ' + data + '\n');
 // })
 
+// BDF.fleursAyantLaSignification('fidélité', (err = '', fleurs = []) => {
+//     console.log('_____________________3________________________\n');
+//     console.log('TEST : fleursAyantLaSignification \n ');
+//     console.log('error : ' + err + '\n');
+//     console.log('data : ' + fleurs + '\n');
+// })
+
+// creerBaseFleurs('flowers.json', (err = '', bd) => {
+//     console.log('_____________________3________________________\n');
+//     console.log('TEST : creerBaseFleurs \n ');
+//     console.log('error : ' + err + '\n');
+//     console.log('data : ' + bd.significationsDeLaFleur('amaryllis', (err = '', fleurs = []) => {
+//         console.log('_____________________3________________________\n');
+//         console.log('TEST : significationsDeLaFleur \n ');
+//         console.log('error : ' + err + '\n');
+//         console.log('data : ' + fleurs + '\n');
+//     }) + '\n');
+// })
+
 // Promesse version
 
 // BDF.significationsDeLaFleurV2('amarante').then((fleurs, err = '') => {
@@ -26,16 +45,6 @@ let BDF = new BaseDonneesFleurs('flowers.json');
 //     console.log('error : ' + err + '\n');
 // });
 
-// BDF.fleursAyantLaSignification('fidélité', (err = '', fleurs = []) => {
-//     console.log('_____________________3________________________\n');
-//     console.log('TEST : fleursAyantLaSignification \n ');
-//     console.log('error : ' + err + '\n');
-//     console.log('data : ' + fleurs + '\n');
-// })
-
-
-// Promesse version
-
 // creerBaseFleurs('flowers.json').then(BDFStatic => BDFStatic.fleursAyantLaSignification('fidélité', (err = '', fleurs = []) => {
 //     console.log('_____________________4________________________\n');
 //     console.log('TEST : creerBaseFleurs \n ');
@@ -45,24 +54,24 @@ let BDF = new BaseDonneesFleurs('flowers.json');
 
 // p.then(onFulfilled) = p.then(onFulfilled, null)
 
-// creerBaseFleurs('flowers.json').then(BDFStatic => BDFStatic.fleursAyantLaSignificationV2('fidélité').then((fleurs = []) => {
+// creerBaseFleursV2('flowers.json').then(BDFStatic => BDFStatic.fleursAyantLaSignificationV2('fidélité').then((fleurs = []) => {
 //     console.log('_____________________5________________________\n');
-//     console.log('TEST : creerBaseFleurs \n ');
+//     console.log('TEST : creerBaseFleursV2 \n ');
 //     console.log('data : ' + fleurs + '\n');
 // }, (err = '') => {
 //     console.log('_____________________5________________________\n');
-//     console.log('TEST : creerBaseFleurs \n ');
+//     console.log('TEST : creerBaseFleursV2 \n ');
 //     console.log('error : ' + err + '\n');
 // }));
 
 // p.catch(onRejected) = p.then(null, onRejected)
 
-// creerBaseFleurs('flowers.json').then(BDFStatic => BDFStatic.fleursAyantLaSignificationV2('fidélité').then((fleurs = []) => {
+// creerBaseFleursV2('flowers.json').then(BDFStatic => BDFStatic.fleursAyantLaSignificationV2('fidélité').then((fleurs = []) => {
 //     console.log('_____________________5________________________\n');
-//     console.log('TEST : creerBaseFleurs \n ');
+//     console.log('TEST : creerBaseFleursV2 \n ');
 //     console.log('data : ' + fleurs + '\n');
 // }).catch((err = '') => {
 //     console.log('_____________________5________________________\n');
-//     console.log('TEST : creerBaseFleurs \n ');
+//     console.log('TEST : creerBaseFleursV2 \n ');
 //     console.log('error : ' + err + '\n');
 // }));
