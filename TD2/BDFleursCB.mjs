@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { promises as fsPromises } from 'fs';
+import * as path from 'path';
 class BaseDonneesFleurs {
 
     constructor(fileName) {
@@ -48,10 +49,25 @@ class BaseDonneesFleurs {
         })
     }
 
+    fleursAyantLaSignificationV2(signification) {
+        return fsPromises.readFile(this._fileName, 'utf-8')
+            .then(data => JSON.parse(data))
+            .then(fleurs => {
+                const fleurss = fleurs.filter(f => f.signification.includes(signification));
+                if (fleurss === undefined)
+                    return new Error("value not found");
+                else
+                    return Array.from(fleurss.map(f => f.nom));
+            });
+    }
 }
 
-function creerBaseFleurs(nomFichier, cb) {
+function creerBaseFleurs(nomFichier) {
+    if (path.extname(nomFichier) !== '.json')
+        nomFichier += '.json';
 
+    return fsPromises.access(nomFichier, fs.constants.R_OK)
+        .then(() => new BaseDonneesFleurs(nomFichier));
 }
 
 

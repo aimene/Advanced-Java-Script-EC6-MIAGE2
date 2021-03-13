@@ -1,4 +1,4 @@
-import { BaseDonneesFleurs } from './BDFleursCB.mjs';
+import { BaseDonneesFleurs, creerBaseFleurs } from './BDFleursCB.mjs';
 
 
 let BDF = new BaseDonneesFleurs('flowers.json');
@@ -14,15 +14,17 @@ let BDF = new BaseDonneesFleurs('flowers.json');
 //     console.log('data : ' + data + '\n');
 // })
 
-BDF.significationsDeLaFleurV2('amarante').then((fleurs, err = '') => {
-    console.log('_____________________2________________________\n');
-    console.log('TEST : significationsDeLaFleurV2 \n ');
-    console.log('data : ' + fleurs + '\n')
-}, (err = '') => {
-    console.log('_____________________2________________________\n');
-    console.log('TEST : significationsDeLaFleurV2 \n ');
-    console.log('error : ' + err + '\n');
-});
+// Promesse version
+
+// BDF.significationsDeLaFleurV2('amarante').then((fleurs, err = '') => {
+//     console.log('_____________________2________________________\n');
+//     console.log('TEST : significationsDeLaFleurV2 \n ');
+//     console.log('data : ' + fleurs + '\n')
+// }, (err = '') => {
+//     console.log('_____________________2________________________\n');
+//     console.log('TEST : significationsDeLaFleurV2 \n ');
+//     console.log('error : ' + err + '\n');
+// });
 
 // BDF.fleursAyantLaSignification('fidélité', (err = '', fleurs = []) => {
 //     console.log('_____________________3________________________\n');
@@ -30,3 +32,24 @@ BDF.significationsDeLaFleurV2('amarante').then((fleurs, err = '') => {
 //     console.log('error : ' + err + '\n');
 //     console.log('data : ' + fleurs + '\n');
 // })
+
+
+// Promesse version
+
+// creerBaseFleurs('flowers.json').then(BDFStatic => BDFStatic.fleursAyantLaSignification('fidélité', (err = '', fleurs = []) => {
+//     console.log('_____________________4________________________\n');
+//     console.log('TEST : creerBaseFleurs \n ');
+//     console.log('data : ' + fleurs + '\n');
+//     console.log('error : ' + err + '\n');
+// }));
+
+
+// creerBaseFleurs('flowers.json').then(BDFStatic => BDFStatic.fleursAyantLaSignificationV2('fidélité').then((fleurs = [], Err = '') => {
+//     console.log('_____________________5________________________\n');
+//     console.log('TEST : creerBaseFleurs \n ');
+//     console.log('data : ' + fleurs + '\n');
+// }, (err = '') => {
+//     console.log('_____________________5________________________\n');
+//     console.log('TEST : creerBaseFleurs \n ');
+//     console.log('error : ' + err + '\n');
+// }));
