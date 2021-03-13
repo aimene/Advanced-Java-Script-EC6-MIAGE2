@@ -35,15 +35,17 @@ let BDF = new BaseDonneesFleurs('flowers.json');
 
 // Promesse version
 
-// BDF.significationsDeLaFleurV2('amarante').then((fleurs, err = '') => {
-//     console.log('_____________________2________________________\n');
-//     console.log('TEST : significationsDeLaFleurV2 \n ');
-//     console.log('data : ' + fleurs + '\n')
-// }, (err = '') => {
-//     console.log('_____________________2________________________\n');
-//     console.log('TEST : significationsDeLaFleurV2 \n ');
-//     console.log('error : ' + err + '\n');
-// });
+// BDF.significationsDeLaFleurV2('bleduet')
+//     .then(
+//         (fleurs) => {
+//             console.log('_____________________2________________________\n');
+//             console.log('TEST : significationsDeLaFleurV2 \n ');
+//             console.log('data : ' + fleurs + '\n')
+//         }, (err = '') => {
+//             console.log('_____________________2________________________\n');
+//             console.log('TEST : significationsDeLaFleurV2 \n ');
+//             console.log('error : ' + err + '\n');
+//         });
 
 // creerBaseFleurs('flowers.json').then(BDFStatic => BDFStatic.fleursAyantLaSignification('fidélité', (err = '', fleurs = []) => {
 //     console.log('_____________________4________________________\n');
@@ -76,14 +78,16 @@ let BDF = new BaseDonneesFleurs('flowers.json');
 //     console.log('error : ' + err + '\n');
 // }));
 
-// async function test() {
-//     const bd = await creerBaseFleursV3('flowers.json');
+async function test() {
+    const bd = await creerBaseFleursV3('flowers.json');
 
-//     bd.significationsDeLaFleur('amaryllis', (err = '', fleurs = []) => {
-//         console.log('_____________________3________________________\n');
-//         console.log('TEST : significationsDeLaFleur \n ');
-//         console.log('error : ' + err + '\n');
-//         console.log('data : ' + fleurs + '\n');
-//     });
-// }
-// test();
+    // bd.significationsDeLaFleur('amaryllis', (err = '', fleurs = []) => {
+    //     console.log('_____________________3________________________\n');
+    //     console.log('TEST : significationsDeLaFleur \n ');
+    //     console.log('error : ' + err + '\n');
+    //     console.log('data : ' + fleurs + '\n');
+    // });
+
+    //console.log(await bd.fleursAyantLaSignificationV3('confiance'));
+}
+test();

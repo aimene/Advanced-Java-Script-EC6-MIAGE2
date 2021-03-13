@@ -60,6 +60,16 @@ class BaseDonneesFleurs {
                     return Array.from(fleurss.map(f => f.nom));
             });
     }
+
+    async fleursAyantLaSignificationV3(signification) {
+        const bd = await fsPromises.readFile(this._fileName, 'utf-8');
+        const bdObj = JSON.parse(bd);
+        const fleurss = bdObj.filter(f => f.signification.includes(signification));
+        if (fleurss === undefined)
+            return new Error("value not found");
+        else
+            return Array.from(fleurss.map(f => f.nom));
+    }
 }
 
 
