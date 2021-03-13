@@ -1,7 +1,9 @@
 import { BaseDonneesFleurs, creerBaseFleurs, creerBaseFleursV2, creerBaseFleursV3 } from './BDFleursCB.mjs';
+import { BaseDonneesFleursMap } from './BDFleursMAP.mjs';
 
 
 let BDF = new BaseDonneesFleurs('flowers.json');
+let BDFs = new BaseDonneesFleursMap('flowers.json');
 
 
 // Test  node --experimental-modules testBDFleursCB.mjs
@@ -78,16 +80,16 @@ let BDF = new BaseDonneesFleurs('flowers.json');
 //     console.log('error : ' + err + '\n');
 // }));
 
-async function test() {
-    const bd = await creerBaseFleursV3('flowers.json');
+// async function test() {
+//     const bd = await creerBaseFleursV3('flowers.json');
 
-    // bd.significationsDeLaFleur('amaryllis', (err = '', fleurs = []) => {
-    //     console.log('_____________________3________________________\n');
-    //     console.log('TEST : significationsDeLaFleur \n ');
-    //     console.log('error : ' + err + '\n');
-    //     console.log('data : ' + fleurs + '\n');
-    // });
+// bd.significationsDeLaFleur('amaryllis', (err = '', fleurs = []) => {
+//     console.log('_____________________3________________________\n');
+//     console.log('TEST : significationsDeLaFleur \n ');
+//     console.log('error : ' + err + '\n');
+//     console.log('data : ' + fleurs + '\n');
+// });
 
-    //console.log(await bd.fleursAyantLaSignificationV3('confiance'));
-}
-test();
+//     console.log(await bd.fleursAyantLaSignificationV3('confiance'));
+// }
+// test();
