@@ -14,12 +14,15 @@ let BDF = new BaseDonneesFleurs('flowers.json');
 //     console.log('data : ' + data + '\n');
 // })
 
-// BDF.significationsDeLaFleurV2('amarante').then((fleurs, err = '') => {
-//     console.log('_____________________2________________________\n');
-//     console.log('TEST : significationsDeLaFleurV2 \n ');
-//     console.log('error : ' + err + '\n');
-//     console.log('data : ' + fleurs + '\n')
-// });
+BDF.significationsDeLaFleurV2('amarante').then((fleurs, err = '') => {
+    console.log('_____________________2________________________\n');
+    console.log('TEST : significationsDeLaFleurV2 \n ');
+    console.log('data : ' + fleurs + '\n')
+}, (err = '') => {
+    console.log('_____________________2________________________\n');
+    console.log('TEST : significationsDeLaFleurV2 \n ');
+    console.log('error : ' + err + '\n');
+});
 
 // BDF.fleursAyantLaSignification('fidélité', (err = '', fleurs = []) => {
 //     console.log('_____________________3________________________\n');
