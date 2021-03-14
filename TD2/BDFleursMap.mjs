@@ -16,7 +16,7 @@ class BaseDonneesFleursMap {
             return self.indexOf(value) === index;
         });
         this._SingNomMap = new Map(sing.map(s => [s, fleurs.filter(f => f.signification.includes(s)).map(f => f.nom)]));
-        //console.log(this._NomSingMap);
+        console.log(this._NomSingMap);
     }
 
     significationsDeLaFleurV2(nomFleur) {
@@ -37,6 +37,14 @@ class BaseDonneesFleursMap {
             return Array.from(fleurs);
     }
 
+
+
 }
 
-export { BaseDonneesFleursMap };
+async function creerBaseFleursV3Map(nomFichier) {
+    if (path.extname(nomFichier) !== '.json')
+        nomFichier += '.json';
+    await fsPromises.access(nomFichier, fs.constants.R_OK);
+    return new BaseDonneesFleursMap(nomFichier);
+}
+export { BaseDonneesFleursMap, creerBaseFleursV3Map };

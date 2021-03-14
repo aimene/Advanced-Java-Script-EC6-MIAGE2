@@ -1,5 +1,5 @@
 import { BaseDonneesFleurs, creerBaseFleurs, creerBaseFleursV2, creerBaseFleursV3 } from './BDFleursCB.mjs';
-import { BaseDonneesFleursMap } from './BDFleursMAP.mjs';
+import { BaseDonneesFleursMap, creerBaseFleursV3Map } from './BDFleursMAP.mjs';
 
 
 let BDF = new BaseDonneesFleurs('flowers.json');
@@ -99,3 +99,9 @@ let BDF = new BaseDonneesFleurs('flowers.json');
 
 // console.log(BDFs.significationsDeLaFleurV2('achillée'));
 // console.log(BDFs.fleursAyantLaSignificationV2('confiance'));
+
+// async function test() {
+//     const bd = await creerBaseFleursV3Map('flowers.json');
+
+// }
+// test();
