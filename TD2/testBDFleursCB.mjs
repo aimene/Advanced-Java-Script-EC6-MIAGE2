@@ -3,10 +3,6 @@ import { BaseDonneesFleursMap } from './BDFleursMAP.mjs';
 
 
 let BDF = new BaseDonneesFleurs('flowers.json');
-let BDFs = new BaseDonneesFleursMap('flowers.json');
-
-// console.log(BDFs.significationsDeLaFleurV2('achillée'));
-console.log(BDFs.fleursAyantLaSignificationV2('confiance'));
 
 // Test  node --experimental-modules testBDFleursCB.mjs
 
@@ -95,3 +91,11 @@ console.log(BDFs.fleursAyantLaSignificationV2('confiance'));
 //     console.log(await bd.fleursAyantLaSignificationV3('confiance'));
 // }
 // test();
+
+
+// version map 
+
+// let BDFs = new BaseDonneesFleursMap('flowers.json');
+
+// console.log(BDFs.significationsDeLaFleurV2('achillée'));
+// console.log(BDFs.fleursAyantLaSignificationV2('confiance'));
